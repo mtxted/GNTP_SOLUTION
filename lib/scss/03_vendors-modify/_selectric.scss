@@ -1,0 +1,153 @@
+/* selectric */
+
+@mixin select_wrap($h){
+  $h : 34px;
+  .selectric {
+    .label {
+      height: $h;
+      line-height: $h;
+    }
+    .button {
+      height: $h;
+      line-height: $h;
+    }
+  }
+}
+
+.select_wrap {
+  border: 1px solid #bec3ca;
+  border-radius: 3px;
+  background: #fff;
+  //position: relative;
+  //z-index: 999;
+  &.lec_time_01 {
+    position: absolute;
+    left: -180px;
+  }
+
+  &.lec_time_02 {
+    position: absolute;
+    left: -80px;
+  }
+  &.disabled {
+    border-color: #e0e6ea !important
+  }
+
+  .selectric-disabled {
+    opacity: 1;
+
+    .label {
+      color: #757c8a !important
+    }
+
+    .button {
+      background-image: url(/lib/images/ico/arr_down_gray.png) !important
+    }
+  }
+
+  .selectric-wrapper {
+    //position: static;
+    .selectric {
+      border: 0 none;
+      background: transparent;
+      .label {
+        font-size: 0.923rem;
+        color: $fontColorDark;
+        margin-left: 12px;
+        margin-right: 40px;
+      }
+      .button {
+        width: 40px;
+        background: transparent url(/lib/images/ico/arr_down_dark.png) no-repeat center center;
+        &::after {
+          display: none
+        }
+      }
+    }
+    .selectric-items {
+      left: -1px;
+      right: -1px;
+      width: auto !important;
+      box-shadow: none;
+      margin-top: 3px;
+      border-radius: 4px;
+      background: #fff;
+      overflow: hidden;
+
+      li {
+        padding: 7px 12px;
+        &.selected {
+          background: #ebeef1;
+          color: $fontColorDark;
+        }
+        &.highlighted {
+          background: #ebeef1;
+          color: $fontColorDark;
+        }
+        &:hover {
+          background: #ebeef1;
+          color: $fontColorDark;
+        }
+      }
+    }
+  }
+
+  &.gray {
+    border-color: #e0e6ea;
+
+    .selectric-items {
+      border-color: #e0e6ea
+    }
+
+    .selectric .button {
+      background-image: url(/lib/images/ico/arr_down_gray.png)
+    }
+  }
+
+  &.mediumGray {
+    border-color: #b9c7d5;
+
+    .selectric-items {
+      border-color: #b9c7d5
+    }
+
+    .selectric .button {
+      background-image: url(/lib/images/ico/arr_down_gray.png)
+    }
+  }
+
+  &.topOption {
+    border-color: $lineColorGrey;
+
+    .selectric-items {
+      border-color: $lineColorGrey
+    }
+  }
+
+  &.envTop {
+    &:hover {
+      border-color: $mainColorD2;
+    }
+    //border-color: $mainColorD2;
+
+    .selectric .button {
+      //background-image: url(/lib/images/ico/arr_down_blue.png)
+    }
+
+    .selectric .label {
+      //color: $mainColorD2
+    }
+  }
+}
+
+
+.tb_ctrl_search {
+  .select_wrap {
+    border: 0px solid #fff;
+
+    .selectric-wrapper {
+      display: none;
+    }
+
+  }
+}

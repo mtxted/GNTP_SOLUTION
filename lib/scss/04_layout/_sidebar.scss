@@ -1,0 +1,147 @@
+/* sidebar */
+.sidebar {
+  display: table-cell;
+  width: 230px;
+  background: $sidebarBg;
+}
+.sidebar_logo {
+  position: relative;
+  height: 64px;
+  background: $mainColor;
+
+  img { @include position_md }
+}
+.sidebar_cont {
+  padding: 40px 23px;
+  background: $mainColorD2;
+
+  .sidebar_user {
+    position: relative;
+    z-index: 2;
+    padding-left: 35px;
+  }
+
+  .sidebar_user_profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid $mainColorD4;
+    background: #fff url(../images/sidebar/sidebar_user_profile_bg.png) no-repeat center center;
+    vertical-align: middle;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border: 2px solid #fff;
+      border-radius: 50%
+    }
+    &.on::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: -1px;
+      right: -1px;
+      border: 2px solid $mainColorD4;
+      box-sizing: border-box;
+      background: $pointColorS1;
+      @include btn_radius(10px, true)
+    }
+  }
+
+  .sidebar_user_btn {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding-right: 15px;
+    border: 0;
+    background: transparent url(../images/sidebar/sidebar_user_btn_arr.png) no-repeat right 15px;
+    color: #fff;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: $txtPointColor;
+      background-position-y: -20px;
+    }
+  }
+
+  .sidebar_user_menu {
+    position: absolute;
+    top: 31px;
+    right: 0;
+    left: 38px;
+    padding: 4px;
+    border: 1px solid #000;
+    background: #eff2f3;
+    ul {
+      margin: -4px -4px 0;
+      background: #fff;
+      text-align: left;
+      li { border-bottom: 1px solid #dfe6e8;
+        a {
+          display: block;
+          height: 36px;
+          padding: 10px 12px 12px;
+          background: #fff;
+          text-align: left;
+          color: #3a4d6d;
+          text-decoration: none;
+          &:hover { color: #00c4d2 }
+        }
+      }
+    }
+    button {
+      width: 100%;
+      height: 28px;
+      margin-top: 4px;
+      border: 0;
+      border-radius: 3px;
+      background: #ff6f61;
+      color: #fff;
+      text-transform: uppercase;
+      transition: background .2s;
+      &:hover { background: #00c4d2; }
+    }
+  }
+}
+
+.sidebar_option {
+  padding: 10px;
+  background: $mainColorD3;
+}
+.sidebar_option_mode {
+  @include btn_radius(58px, false);
+  padding: 3px;
+  background: $modeColorbg;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.1), inset 0 1px 0 rgba(0,0,0,0.2);
+
+  .btn_mode {
+    float: left;
+    @include btn_radius(52px, true);
+    margin-left: 2px;
+    border: 0;
+    background-color: $mainColor;
+    color: $modeColorTxt;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 0 rgba(0,0,0,0.12);
+    transition: width .2s;
+
+    &:first-child { margin-left: 0 }
+    &.admin { @include ir_ico('../images/sidebar/sidebar_mode_admin.png', false) }
+    &.dev { @include ir_ico('../images/sidebar/sidebar_mode_dev.png', false) }
+    &.on {
+      width: calc(100% - (52px + 2px));
+      text-indent: 0;
+      &.admin { background: $navPointColor }
+      &.dev { background: $txtPointColor }
+    }
+  }
+}
+

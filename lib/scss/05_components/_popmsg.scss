@@ -1,0 +1,42 @@
+/* popmsg */
+.popmsg_wrap {
+  position: relative;
+  cursor: pointer;
+  .popmsg_box {
+    display: none;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 4px;
+    background: #0a2348;
+    border: 1px solid #061839;
+    color: #afbacb;
+    line-height: 1.2em;
+  }
+  &.popmsg_info {
+    display: inline-block;
+    vertical-align: middle;
+    @include btn_radius(21px, true);
+    background-color: #d5d9e0;
+    margin-left: 2px;
+    &:hover {
+      background-color: #b0b8c4
+    }
+    .popmsg_box {
+      @include bubble(8px,#061839,bottom);
+      bottom: calc(100% + 9px);
+      left: -22px;
+      min-width: 210px;
+      &::after {
+        left: 24px;
+        transform: none;
+      }
+    }
+  }
+  &:not(.js_popmsg_ck) {
+    &:hover {
+      .popmsg_box {
+        display: block
+      }
+    }
+  }
+}

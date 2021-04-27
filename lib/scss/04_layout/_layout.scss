@@ -1,0 +1,64 @@
+/* layout */
+html {
+  font-size: $rootSize;
+}
+body {
+  position: relative;
+  font-family: 'Noto', sans-serif;
+  font-size: 1rem;
+  min-width: $minWidth;
+  padding-top: 4px;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: $mainColor
+  }
+}
+
+.wrap {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+
+.main {
+  display: table-cell;
+  padding: 20px 10px 0;
+  border-top-left-radius: 8px;
+  background: #f0f4f7;
+  vertical-align: top
+}
+
+.container {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  .container_row {
+    display: table-row;
+    > * {
+      display: table-cell
+    }
+  }
+}
+
+.content {
+  padding: 0px;
+  background: #f5f6f9;
+
+}
+
+.common_tit {
+  text-transform: uppercase;
+  font-weight: normal;
+  @include font_size(0);
+  color: $mainColorDark;
+}
+

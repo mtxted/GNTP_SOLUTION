@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/javascript">
+    <meta http-equiv="Content-Type" content="text/css">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/lib/css/selectric.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/lib/scss/main.css">
+
+    <script src="/lib/js/jquery-1.9.1.min.js"></script>
+    <script src="/lib/js/jquery-ui.min.js"></script>
+    <script src="/lib/js/jquery.selectric.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <h1 class="sidebar_logo"><img src="/lib/images/sidebar/sidebar_logo.png" alt="GNTP"></h1>
+        <div class="sidebar_cont">
+            <div class="sidebar_user js_dropdown">
+                <div class="sidebar_user_profile"><!--<img src="#" alt="">--></div>
+                <button type="button" class="sidebar_user_btn js_dropdown_btn">Gil Dong, Hong</button>
+                <div class="sidebar_user_menu js_dropdown_list">
+                    <ul>
+                        <li><a href="#">포탈 바로가기</a></li>
+                        <li><a href="/src/push.html">알림 보기</a></li>
+                    </ul>
+                    <button type="button">Logout</button>
+                </div><!-- //sidebar_user_menu -->
+            </div>
+        </div>
+
+        <nav>
+            <ul class="sidebar_nav js_nav">
+                <li><a href="/src/reservation/vm_reservation.html">가상 실습실 예약 관리</a></li>
+                <li><a href="/src/environment/vm_environment.html">가상 환경 관리</a></li>
+                <li><a href="/src/lecture/lecture.html">강의 관리</a></li>
+                <li><a href="/src/template/template.html">템플릿 관리</a></li>
+                <li><a href="/src/trainee/trainee.html">실습자 관리</a></li>
+                <li><a href="/src/contest/contest.html">공모전 관리</a></li>
+                <li><a href="/src/board/board.html">게시판 관리</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="top_toast" style="">
+            <div class="top_toast_item" style="display:none">
+                <div class="top_toast_inner">
+                    <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+                </div>
+                <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+            </div><!-- //top_toast_item -->
+
+            <div class="top_toast_item" style="display:none">
+                <div class="top_toast_inner">
+                    <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+                </div>
+                <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+            </div><!-- //top_toast_item -->
+
+            <div class="top_toast_item" style="display:block">
+                <div class="top_toast_inner">
+                    <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+                </div>
+                <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+            </div><!-- //top_toast_item -->
+
+            <div class="count">8</div>
+        </div>
+
+        <div class="top_option">
+            <div class="select_wrap">
+                <select>
+                    <option value="">전체</option>
+                    <option value="">REGION</option>
+                    <option value="">REGION</option>
+                </select>
+            </div>
+        </div><!-- //top_option -->
+
+        <div class="container">
+            <div class="container_row">
+                <div class="top_title">
+                    <h2 class="current">대시보드</h2>
+                </div>
+            </div><!-- //container_row -->
+
+            <div class="container_row">
+                <div class="content">
+                    <div class="vm_dashboard">
+                        <div class="vm_info_wrap">
+                            <p class="tit">VM 현황 <span>2021.05.02  13:00</span></p>
+
+                            <div class="dashboard_img_wrap">
+                                <img src="/lib/images/gntp/dashboard.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="trainee_info">
+                            <p class="tit">실습자 현황 <span>2021.05.02  13:00</span></p>
+                            <div class="dashboard_img_wrap_02">
+                                <img src="/lib/images/gntp/dashboard_02.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="vm_list">
+                            <p class="tit">VM 현황 목록</p>
+                            <div class="tb_wrap" style="border: 0;">
+                                <table class="tb_grid">
+                                    <thead>
+                                    <tr>
+                                        <th class="th_check">No</th>
+                                        <th class="">아이디</th>
+                                        <th class="th_lec_period">VM 예약 신청일</th>
+                                        <th class="th_step">시작시간</th>
+                                        <th class="th_vm_port">종료 시간</th>
+                                        <th class="th_status">상태</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g2">승인대기</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g4">연장대기</span></td>
+                                    </tr>
+
+                                    <tr class="on">
+                                        <td>3</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g1">실행중</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status">만료</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g3">강제중지</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>6</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g5">승인반려</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>7</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g5">승인반려</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>8</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g1">실행중</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>9</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g1">실행중</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>10</td>
+                                        <td class="td_al_left">USER 01</td>
+                                        <td class="td_al_left">2021.04.23</td>
+                                        <td class="td_al_left">2021.04.23 14:00</td>
+                                        <td class="td_al_left">2021.04.23 17:00</td>
+                                        <td><span class="ico_status g1">실행중</span></td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+
+                                <div class="pagenation_wrap">
+                                    <div class="pagenation_select">
+                                        <div class="select_wrap">
+                                            <select>
+                                                <option>10건</option>
+                                            </select>
+                                        </div>
+                                        <p class="pagenation_counter">총 218건</p>
+                                    </div>
+                                    <div class="pagenation_inner">
+                                        <a href="#" class="pagenation_btn prev"><span>Prev</span></a>
+                                        <div class="pagenation_current">
+                                            <span class="current">10</span>
+                                            <span>of 38</span>
+                                        </div>
+                                        <a href="#" class="pagenation_btn next"><span>Next</span></a>
+                                    </div>
+                                </div><!-- //pagenation_wrap -->
+
+                            </div><!-- //tb_wrap -->
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- //container_row -->
+        </div>
+    </div>
+</div>
+
+
+<script src="/lib/js/jquery.script.js"></script>
+
+<script>
+
+
+</script>
+</body>
+</html>

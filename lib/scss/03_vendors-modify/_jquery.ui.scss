@@ -1,0 +1,44 @@
+/* checkboxradio*/
+.checkboxradio {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.ui-state-active {
+    background: transparent !important;
+    border: 0 none !important;
+  }
+  &.ui-button { padding: 0 }
+  &.ui-visual-focus { box-shadow: none }
+  &.ui-checkboxradio-checked .ui-icon {
+    background: #f8f9fb url(../images/ico/ico_checkbox.png) no-repeat center center
+  }
+
+  .ui-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccd2dc;
+    background-color: #f8f9fb;
+    box-shadow: none;
+  }
+
+  &.ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-icon,
+  &.ui-checkboxradio-radio-label.ui-checkboxradio-checked:hover .ui-icon {
+    background-image: url(../images/ico/ico_radio.png);
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+    border: 1px solid $mainColor;
+  }
+}
+
+th .checkboxradio .ui-icon {
+  background-color: #e9ecf1;
+  border-color: #d5d9df;
+}
+tbody tr:hover .checkboxradio .ui-icon {
+  border-color: #ccd2dc;
+}

@@ -1,0 +1,171 @@
+/* button style */
+.btn_ctrl {
+  position: relative;
+  padding-left: 15px;
+  border-radius: 4px;
+  border: 0;
+  color: $btnColor;
+  text-align: left;
+  //text-align: center;
+  text-decoration: none;
+  @include font_size(0);
+  &.submit { background: $btnColorSubmit; }
+  &.run { background: $btnColorRun; }
+  &.cancel { background: $btnColorCancel; }
+  &.reload { background: $btnColorReload; }
+  &.btn_sprite {
+    background-color: #fff;
+    border: 1px solid #071e3f;
+    &:focus, &.on {
+      background-color: $mainColorD2;
+      border-color: $mainColorD5
+    }
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.btn_border {
+  border: 0px solid $mainColorDark2;
+  background: transparent;
+  @include font_size(2);
+  &.submit {
+    border-color: #9398ff;
+    background: #eff0ff;
+  }
+  &:before {
+    content: '';
+  }
+}
+
+.tb_ctrl_btns {
+  .submit {
+    background: url(../images/ico/btn_ico_add.png) no-repeat 90% center #f7f8fa;
+    &:hover {
+      background: url(../images/ico/btn_ico_add_over.png) no-repeat 90% center #f7f8fa;
+      opacity: 1;
+    }
+  }
+
+  .cancel {
+    background: url(../images/ico/btn_ico_del.png) no-repeat 90% center #f7f8fa;
+    &:hover {
+      background: url(../images/ico/btn_ico_del_over.png) no-repeat 90% center #f7f8fa;
+      opacity: 1;
+    }
+  }
+
+  .run {
+    background: url(../images/ico/btn_ico_run.png) no-repeat 90% center #f7f8fa;
+    &:hover {
+      background: url(../images/ico/btn_ico_run_over.png) no-repeat 90% center #f7f8fa;
+      opacity: 1;
+    }
+  }
+
+  .check {
+    background: url(../images/ico/btn_ico_check.png) no-repeat 90% center #f7f8fa;
+    &:hover {
+      background: url(../images/ico/btn_ico_check_over.png) no-repeat 90% center #f7f8fa;
+      opacity: 1;
+    }
+  }
+
+
+}
+
+.log_top_ctrl {
+  .btn_ctrl {
+    padding-left: 5px;
+  }
+}
+
+.ico_txt {
+  background: no-repeat left center;
+  //@include btn_ico('add');
+  //@include btn_ico('del');
+  //@include btn_ico('add2');
+}
+.ico_ir {
+  display: block;
+  height: 100%;
+  background: no-repeat center center;
+  @include ir;
+  @include btn_ico('refresh');
+  @include btn_ico('search');
+  @include btn_ico('setting');
+  @include btn_ico('plus');
+  @include btn_ico('minus');
+  @include btn_ico('search2');
+  @include btn_ico('start');
+  @include btn_ico('pause');
+  @include btn_ico('info');
+  @include btn_ico('status1');
+  @include btn_ico('status2');
+  @include btn_ico('status3');
+  @include btn_ico('status4');
+  @include btn_ico('status5');
+  @include btn_ico('add2');
+}
+
+.ico_ir.search, .ico_ir.setting, .ico_ir.refresh {
+  @include btn_ico_hover('search');
+  @include btn_ico_hover('setting');
+  @include btn_ico_hover('refresh')
+}
+
+.btn_toggle {
+  position: relative;
+  width: 28px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  .ico_toggle {
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -5px;
+    @include ir_ico('../images/sprite/btn_ico_toggle.png', false);
+    background-position: center -5px
+  }
+}
+.close .btn_toggle .ico_toggle {
+  background-position-y: top
+}
+
+.btn_search {
+  border: 0;
+  background: #f5f6f9;
+}
+
+.ctrl_btns {
+  $h : 36px;
+  .btn_set {
+    position: relative;
+    float: left;
+    width: $h - 4px;
+    height: $h - 4px;
+    border: 1px solid #b9c7d5;
+    background: #fff;
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    &:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    &:first-child ~ .btn_set {
+      margin-left: -1px
+    }
+    &:focus, &.on {
+      z-index: 1;
+      background-color: $mainColorD2;
+      border-color: $mainColorD5
+    }
+    @include btn_sprite('download',12px);
+    @include btn_sprite('expand',12px);
+  }
+}

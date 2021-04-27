@@ -1,0 +1,117 @@
+/* event */
+.event_list {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-right: 10px;
+  border-left: 2px solid #e0e2e5;
+  &::before, &::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    @include btn_radius(14px,true);
+    left: -8px;
+    border: 3px solid #e0e2e5;
+    background: #fff url(../images/ico/event_dot.png) no-repeat center center;
+  }
+  &::before { top: 0 }
+  &::after { bottom: 0 }
+  > li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: -30px;
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      @include position_ml;
+      left: 0;
+      border-top: 2px dotted #e0e2e5;
+    }
+    &::after {
+      content: '';
+      box-sizing: border-box;
+      @include position_ml;
+      @include btn_radius(14px,true);
+      left: -8px;
+      border: 3px solid #e0e2e5;
+      background: #fff;
+    }
+    &:nth-child(odd) {
+      &::before { width: 35px }
+      .item {
+        margin-left: 13px;
+        margin-right: 50%;
+      }
+    }
+    &:nth-child(even) {
+      &::before { width: calc(50% + 22px) }
+      .item {
+        margin-left: calc(50% + 13px)
+      }
+    }
+
+    .item {
+      position: relative;
+      z-index: 1;
+      padding: 16px 20px;
+      border: 2px solid #e0e2e5;
+      border-radius: 6px;
+      background: #fdfdfe;
+      &::after {
+        content: '';
+        box-sizing: border-box;
+        @include position_ml;
+        @include btn_radius(14px,true);
+        left: -8px;
+        border: 3px solid #e0e2e5;
+        background: #fff;
+      }
+    }
+    .tit {
+      margin-bottom: 12px;
+      color: $mainColorD2;
+      @include font_size(2);
+    }
+    .time {
+      margin-bottom: 10px;
+      color: #6a7484;
+    }
+    .msg {
+      min-height: 32px;
+      color: #071e3f;
+      line-height: 1.3em
+    }
+  }
+  > li.active {
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      @include position_ml;
+      left: 0;
+      border-top: 2px dotted #ff5d4d;
+    }
+    &::after {
+      content: '';
+      box-sizing: border-box;
+      @include position_ml;
+      @include btn_radius(14px,true);
+      left: -8px;
+      border: 3px solid #ff5d4d;
+      background: #fff;
+    }
+    .item {
+      border: 2px solid #ff5d4d;
+      &::after {
+        content: '';
+        box-sizing: border-box;
+        @include position_ml;
+        @include btn_radius(14px,true);
+        left: -8px;
+        border: 3px solid #ff5d4d;
+        background: #fff;
+      }
+    }
+  }
+
+
+}

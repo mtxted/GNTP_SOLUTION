@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/javascript">
+  <meta http-equiv="Content-Type" content="text/css">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/lib/css/selectric.css">
+  <link rel="stylesheet" type="text/css" href="/lib/css/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/lib/scss/main.css">
+
+  <script src="/lib/js/jquery-1.9.1.min.js"></script>
+  <script src="/lib/js/jquery-ui.min.js"></script>
+  <script src="/lib/js/jquery.selectric.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="sidebar">
+    <h1 class="sidebar_logo"><img src="/lib/images/sidebar/sidebar_logo.png" alt="GNTP"></h1>
+    <div class="sidebar_cont">
+      <div class="sidebar_user js_dropdown">
+        <div class="sidebar_user_profile"><!--<img src="#" alt="">--></div>
+        <button type="button" class="sidebar_user_btn js_dropdown_btn">Gil Dong, Hong</button>
+        <div class="sidebar_user_menu js_dropdown_list">
+          <ul>
+            <li><a href="#">포탈 바로가기</a></li>
+            <li><a href="/src/push.html">알림 보기</a></li>
+          </ul>
+          <button type="button">Logout</button>
+        </div><!-- //sidebar_user_menu -->
+      </div>
+    </div>
+
+    <nav>
+      <ul class="sidebar_nav js_nav">
+        <li><a href="/src/reservation/vm_reservation.html">가상 실습실 예약 관리</a></li>
+        <li><a href="/src/environment/vm_environment.html">가상 환경 관리</a></li>
+        <li><a href="/src/lecture/lecture.html">강의 관리</a></li>
+        <li><a href="/src/template/template.html">템플릿 관리</a></li>
+        <li><a href="/src/trainee/trainee.html">실습자 관리</a></li>
+        <li><a href="/src/contest/contest.html">공모전 관리</a></li>
+        <li><a href="/src/board/board.html">게시판 관리</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="top_toast">
+      <div class="top_toast_item" style="display:none">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="top_toast_item" style="display:none">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="top_toast_item" style="display:block">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="count">8</div>
+    </div>
+    <div class="top_option">
+
+    </div><!-- //top_option -->
+
+    <div class="container">
+      <div class="container_row">
+        <div class="top_title">
+          <h2 class="current">알림</h2>
+        </div>
+      </div><!-- //container_row -->
+
+      <div class="container_row">
+        <div class="content">
+          <div class="push_wrap">
+            <ul class="event_list">
+              <li class="active">
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li class="active">
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="time">8 minutes ago</div>
+                  <div class="msg">알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다. 알림이 내용이 표시 됩니다.
+                    확인을 완료하면 앞에 빨간색 점이 점이 삭제됩니다.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- //content -->
+      </div><!-- //container_row -->
+    </div>
+  </div>
+</div>
+
+
+<script src="/lib/js/jquery.script.js"></script>
+
+<script>
+
+
+</script>
+</body>
+</html>

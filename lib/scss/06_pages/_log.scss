@@ -1,0 +1,101 @@
+/* log */
+.log_top {
+  @include clear;
+  $h : 38px;
+  height: $h;
+  margin: 10px 10px 0 10px;
+  border-top: 1px solid #071e3f;
+  border-left: 1px solid #c5cad0;
+  border-right: 1px solid #c5cad0;
+  border-bottom: 1px solid #c5cad0;
+  .log_top_ctrl {
+    float: left;
+    height: 100%;
+    .btn_ctrl {
+      float: left;
+      width: $h;
+      height: $h - 2px;
+      padding: 0;
+      background: #fff;
+      border-radius: 0;
+      border: 1px solid #c5cad0;
+      border-width: 0 1px 0 0;
+      //&:hover { background-color: #4c54ff }
+    }
+    .tit {
+      float: left;
+      padding-left: 20px;
+      line-height: $h - 2px;
+      @include font_size(0);
+      color: #001038;
+      text-transform: uppercase;
+    }
+    .label {
+      font-style: normal;
+    }
+    .select_wrap {
+      float: left;
+      min-width: 300px;
+      margin: 2px 5px 0 20px;
+      @include select_wrap(30px);
+      @extend .mediumGray;
+      border-radius: 3px;
+      .selectric-items {
+        border-radius: 3px;
+      }
+      .selectric {
+        .label {
+          height: $h - 8px;
+        }
+      }
+    }
+  }
+  .log_top_option {
+    float: right;
+    height: 100%;
+    padding: 3px;
+    color: #85909c;
+    .ctrl_btns { float: left }
+    .txt {
+      padding-right: 13px;
+      line-height: $h - 8px;
+    }
+
+    .select_wrap {
+      float: left;
+      min-width: 300px;
+      margin-right: 5px;
+      @include select_wrap(30px);
+      @extend .mediumGray;
+      border-radius: 3px;
+      .selectric-items {
+        border-radius: 3px;
+      }
+      .selectric {
+        .label {
+          height: $h - 8px;
+        }
+      }
+    }
+    &.event {
+      margin: 0 10px;
+      border-top-left-radius: $h / 2;
+      border-bottom-left-radius: $h / 2;
+      .btn_ctrl { border-radius: 50% }
+    }
+  }
+
+
+}
+.log_cont {
+  min-height: 620px;
+  max-height: 1000px;
+  margin: 0 10px;
+  padding: 30px;
+  overflow-y: auto;
+  background: #1e1e1e;
+  color: #fff;
+  border: 1px solid #c5cad0;
+  border-top: 0;
+  box-shadow: inset 0 0 0 1px #fff;
+}

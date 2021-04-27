@@ -1,0 +1,175 @@
+@mixin clear {
+  &:after {
+    content: '';
+    display: block;
+    clear: both
+  }
+}
+
+@mixin position_md {
+  position: absolute;
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto
+}
+@mixin position_ml {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin circle($w) {
+  width: $w;
+  height: $w;
+  border-radius: 50%;
+}
+
+@mixin btn_radius($h, $circle:true) {
+  @if $circle {width: $h;}
+  height: $h;
+  border-radius: $h / 2;
+  line-height: $h
+}
+
+@mixin ir() {
+  overflow: hidden;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+@mixin ir_ico($url, $inlineBlock:true) {
+  @include ir;
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @if $inlineBlock {
+    display: inline-block;
+  }
+}
+
+
+@mixin font_size($added) {
+  @if $rootSize == 12px {
+    font-size: (1+(0.083*$added))+rem;
+  }
+  @if $rootSize == 13px {
+    font-size: (1+(0.077*$added))+rem;
+  }
+  @if $rootSize == 14px {
+    font-size: (1+(0.071*$added))+rem;
+  }
+}
+
+@mixin btn_ico($name) {
+  &.#{$name} { background-image: url(../images/ico/btn_ico_#{$name}.png)}
+  //&.#{$name}:hover { background-image:url(../images/ico/btn_ico_#{$name}_on.png);}
+}
+
+@mixin btn_ico_hover($name) {
+  &.#{$name}:hover { background-image:url(../images/ico/btn_ico_#{$name}_on.png);}
+}
+
+@mixin btn_sprite($name,$h) {
+  position: relative;
+  .ico_ir {
+    width: 100%;
+    height: $h;
+    @include position_md;
+    &.#{$name} { background-image: url(../images/sprite/btn_ico_#{$name}.png) }
+    background-position: center top;
+  }
+  &:hover { .ico_ir { background-position-y: -$h } }
+  &:focus,&.on { .ico_ir { background-position-y: -$h*2 } }
+}
+
+@mixin btn_sprite_add($name,$h) {
+  position: relative;
+  .ico_ir {
+    width: 100%;
+    height: $h;
+    @include position_md;
+    &.#{$name} { background-image: url(../images/sprite/btn_ico_#{$name}.png) }
+    background-position: center top;
+  }
+  &:hover { .ico_ir { background-position-y: -$h } }
+  &:focus,&.on { .ico_ir { background-position-y: -$h*2 } }
+}
+
+@mixin svg($width,$color){
+  svg {
+    width: $width;
+    height: $width * 1.6;
+    &.comma {
+      width: $width * 0.6;
+      height: $width * 1.8;
+    }
+    &.slash {
+      margin-top: 3px
+    }
+  }
+  path {
+    fill: $color;
+  }
+}
+
+@mixin bubble($border-w,$color,$position) {
+  position: absolute;
+  &::after {
+    content: '';
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    border-width: $border-w;
+    @if $position == top {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: $color;
+    }
+    @if $position == bottom {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: $color;
+    }
+    @if $position == left {
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-right-color: $color;
+    }
+    @if $position == right {
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left-color: $color;
+    }
+  }
+}
+
+@mixin dashboard_ico ($name) {
+  &.#{$name} { background-image: url(../images/ico/dashboard_ico_#{$name}.png)}
+}
+
+
+@mixin dashboard_inner_ico ($name) {
+  &.#{$name} { background-image: url(../images/ico/dashboard_inner_ico_#{$name}.png)}
+}
+
+@mixin workload_builder ($name) {
+  &.#{$name} { background-image: url(../images/workload/ico_#{$name}.png)}
+}
+
+@mixin certification_image ($name) {
+  &.#{$name} { background-image: url(../images/authorize/ico_#{$name}.png)}
+}
+
+@mixin certification_image_sm ($name) {
+  &.#{$name} { background-image: url(../images/authorize/ico_#{$name}_s.png)}
+}

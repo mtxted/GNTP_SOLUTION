@@ -1,0 +1,406 @@
+/* content top */
+.top_toast {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1002;
+  &.block {display: block;}
+  .count {
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    right: -7px;
+    min-width: 27px;
+    height: 27px;
+    padding: 0 7px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    background: #ff4200;
+    color: #fff;
+    text-align: center;
+    line-height: 23px
+  }
+
+  .top_toast_item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    background: #ff7800;
+    color: #fff;
+    white-space: nowrap;
+    @include font_size(1);
+
+    .top_toast_inner {
+      display: table;
+      border-spacing: 0;
+      height: 56px;
+      padding: 9px 60px 9px 18px;
+      > * {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .top_toast_close {
+      position: absolute;
+      z-index: 1;
+      top: 15px;
+      right: 12px;
+      width: 26px;
+      height: 26px;
+      border: 0;
+      background: transparent;
+
+      .ico_close {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        text-indent: -9999px;
+        white-space: nowrap;
+        background: url(../images/ico/btn_ico_close.png) no-repeat center center;
+      }
+    }
+  }
+}
+
+.top_option {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+
+  .select_wrap {
+    @include clear;
+    @include select_wrap(34px);
+    @extend .topOption;
+    > * { float: left }
+    > label {
+      height: 34px;
+      line-height: 34px;
+      padding: 0 20px;
+      background: #ebeef1;
+      border-radius: 3px 0 0 3px;
+      //font-weight: bold;
+    }
+    > .selectric-wrapper {
+      min-width: 230px;
+    }
+  }
+
+  ul {
+    overflow: hidden;
+    position: relative;
+    li {
+      float: left;
+      font-size: 13px;
+      color: #677183;
+      line-height: 30px;
+      span {
+        margin:0 5px;
+        display: inline-block;
+        font-size: 22px;
+        position: relative;
+        top: 2.5px;
+        &.vm_01 {
+          color: $mainColor;
+        }
+        &.vm_02 {
+          color: #000;
+        }
+      }
+      &:first-of-type {
+        margin-right: 50px;
+      }
+      &:first-of-type::after {
+        content: '';
+        width: 1px;
+        height: 10px;
+        background: #c5cad0;
+        position: absolute;
+        top: 12.5px;
+        right: 100px;
+      }
+      &:last-of-type::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.container_row {
+  $h_tit: 55px;
+  $h_tab: 35px;
+  $h_msg: 110px;
+  //height: $h_tit + $h_tab;
+
+  .top_title {
+    @include clear;
+    position: relative;
+    padding: 10px 0 0 4px;
+    height: $h_tit;
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 16px;
+      border-left: 3px solid $mainColorDark
+    }
+
+    > *:not(.current_label) {
+      float: left;
+      padding-left: 18px;
+      color: #aab1bd;
+      line-height: 1em;
+      margin-top: -2px;
+      font-weight: bold;
+      @include font_size(7);
+      &.current { color: $mainColorDark }
+      &:not(.current) {
+        padding-right: 30px;
+        background: url(../images/ico/arr_top_tit.png) no-repeat right center
+      }
+    }
+    .current_label {
+      position: relative;
+      float: left;
+      margin: -3px 0 0 8px;
+      padding: 0 16px 0 35px;
+      background: #a5a5a5;
+      @include btn_radius(28px, false);
+      color: #fff;
+      @include font_size(-1);
+      text-transform: uppercase;
+      &::after {
+        content: '';
+        @include position_ml;
+        left: 3px;
+        @include btn_radius(22px, true);
+        background: #fff no-repeat center center;
+      }
+      &.active { background-color: #3d8cff;
+        &::after { background-image: url(../images/ico/label_ico_active.png) }
+      }
+      &.failed { background-color: #f45343;
+        &::after { background-image: url(../images/ico/label_ico_failed.png) }
+      }
+      &.pending { background-color: #0fc014;
+        &::after { background-image: url(../images/ico/label_ico_pending.png) }
+      }
+      &.running { background-color: #6268ff;
+        &::after { background-image: url(../images/ico/label_ico_running.png) }
+      }
+    }
+  }
+
+  .top_tab {
+    $url: url(../images/sprite/tab_bg.png);
+    height: $h_tab;
+
+    > * {
+      position: relative;
+      float: left;
+      height: $h_tab;
+      line-height: $h_tab;
+      padding: 0 40px;
+      border: 0;
+      background: transparent;
+      color: #8c959c;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+      &:hover {
+        color: $mainColorDark
+      }
+      &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        background: $url no-repeat left top;
+      }
+      &::after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        background: $url no-repeat right -100px;
+      }
+
+      &:first-child ~ * {
+        margin-left: -41px
+      }
+      &:first-child {
+        padding-left: 15px;
+        &:before {
+          width: 15px;
+          background-position-y: -200px
+        }
+        &.on:before {
+          background-position-y: -250px
+        }
+      }
+
+      > span {
+        display: block;
+        min-width: 120px;
+        height: 100%;
+        background: $url repeat-x left -300px #f5f6f9;
+      }
+
+      &.on {
+        height: $h_tab + 1;
+        margin-bottom: -1px;
+        color: $mainColorDark;
+        z-index: 11 !important;
+        font-size: 13px;
+        &::before {
+          background-position-y: -50px
+        }
+        &::after {
+          background-position-y: -150px
+        }
+        > span {
+          background-position-y: -350px;
+        }
+      }
+
+      @for $i from 1 to 8 {
+        &:nth-child(#{$i}) { z-index: 10 - $i }
+      }
+    }
+  }
+
+  .top_msgbox {
+    height: 40px;
+    padding-bottom: 30px;
+
+    .ele_msgbox:first-child ~ .ele_msgbox {
+      margin-top: 4px;
+    }
+  }
+}
+
+.ele_msgbox {
+  display: table;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  background: $msgboxColor;
+  color: #FFD7D4;
+  font-style: italic;
+  text-align: left;
+  > span {
+    display: table-cell;
+    &.tit {
+      position: relative;
+      width: 100px;
+      padding: 0 40px 0 15px;
+      font-style: normal;
+      color: #fff;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        box-sizing: border-box;
+        border: 3px solid #fff;
+        @include btn_radius(10px, true);
+
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: 19px;
+        height: 8px;
+        border-left: 1px solid #f48f87
+      }
+    }
+  }
+
+  &.desc {
+    background: #dae2e8;
+    color: #3A3D3C;
+    .tit {
+      color: $fontColorDark;
+      font-weight: bold;
+      background: url(../images/ico/ico_doc.png) no-repeat left 1px;
+      &::before { display: none }
+      &::after { border-color: #8691a0 }
+    }
+  }
+}
+
+.top_dropdown {
+  .top_dropdown_btn {
+    width: 32px;
+    height: 30px;
+    margin-top: 5px;
+    background: #fafbfc;
+    transition: background-color .2s;
+    border: 1px solid #bec3ca;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px #fff;
+    span {
+      position: relative;
+      display: block;
+      width: 12px;
+      height: 10px;
+      margin: auto;
+      border-top: 2px solid #90969f;
+      border-bottom: 2px solid #90969f;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        margin-top: -1px;
+        border-top: 2px solid #90969f;
+      }
+    }
+    &:hover { background: #e7e8ff }
+  }
+  &.active .top_dropdown_btn,
+  &.active .top_dropdown_btn span,
+  &.active .top_dropdown_btn span::after { border-color: $mainColor }
+}
+
+.top_dropdown_list {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  border-radius: 4px;
+  border: 1px solid #061839;
+  background: #0a2348;
+  overflow: hidden;
+  li { text-align: center;
+    &:first-child ~ li { border-top: 1px solid #061839; }
+  }
+  a, button {
+    display: block;
+    width: 100%;
+    padding: 12px 22px;
+    border: 0;
+    color: #afbacb;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background: transparent;
+    font-weight: normal;
+    &:hover {
+      background: $mainColor;
+      color: $navPointColor;
+    }
+  }
+}
+
+.tb_ham_list {
+  @extend .top_dropdown_list;
+}

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/javascript">
+  <meta http-equiv="Content-Type" content="text/css">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/lib/css/selectric.css">
+  <link rel="stylesheet" type="text/css" href="/lib/css/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/lib/scss/main.css">
+
+  <script src="/lib/js/jquery-1.9.1.min.js"></script>
+  <script src="/lib/js/jquery-ui.min.js"></script>
+  <script src="/lib/js/jquery.selectric.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="sidebar">
+    <h1 class="sidebar_logo"><img src="/lib/images/sidebar/sidebar_logo.png" alt="GNTP"></h1>
+    <div class="sidebar_cont">
+      <div class="sidebar_user js_dropdown">
+        <div class="sidebar_user_profile"><!--<img src="#" alt="">--></div>
+        <button type="button" class="sidebar_user_btn js_dropdown_btn">Gil Dong, Hong</button>
+        <div class="sidebar_user_menu js_dropdown_list">
+          <ul>
+            <li><a href="#">포탈 바로가기</a></li>
+            <li><a href="/src/push.html">알림 보기</a></li>
+          </ul>
+          <button type="button">Logout</button>
+        </div><!-- //sidebar_user_menu -->
+      </div>
+    </div>
+
+    <nav>
+      <ul class="sidebar_nav js_nav">
+        <li><a href="/src/reservation/vm_reservation.html">가상 실습실 예약 관리</a></li>
+        <li><a href="/src/environment/vm_environment.html">가상 환경 관리</a></li>
+        <li><a href="/src/lecture/lecture.html">강의 관리</a></li>
+        <li class="on"><a href="/src/template/template.html">템플릿 관리</a></li>
+        <li><a href="/src/trainee/trainee.html">실습자 관리</a></li>
+        <li><a href="/src/contest/contest.html">공모전 관리</a></li>
+        <li><a href="/src/board/board.html">게시판 관리</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="top_toast">
+      <div class="top_toast_item" style="display:none">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="top_toast_item" style="display:none">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="top_toast_item" style="display:block">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="count">8</div>
+    </div>
+    <div class="top_option">
+
+    </div><!-- //top_option -->
+
+    <div class="container">
+      <div class="container_row">
+        <div class="top_title">
+          <h2 class="current">템플릿 관리</h2>
+        </div>
+      </div><!-- //container_row -->
+
+      <div class="container_row">
+        <div class="content">
+          <div class="tb_ctrl">
+            <div class="tb_ctrl_btns">
+              <button type="button" class="btn_ctrl submit create_lecture" ><span class="ico_txt add">템플릿 등록</span></button>
+            </div>
+            <div class="tb_ctrl_search">
+              <div class="select_wrap">
+                <input type="search">
+                <button type="submit" class="btn_search"><span class="ico_ir search">Search</span></button>
+              </div>
+              <button type="button" class="btn_border"><span class="ico_ir refresh">Refresh</span></button>
+            </div>
+          </div>
+          <div class="tb_wrap">
+            <table class="tb_grid">
+              <thead>
+              <tr>
+                <th class="th_check">No</th>
+                <th class="">템플릿명
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="템플릿명" style="display: none;">
+                  </div>
+                </th>
+                <th class="">
+                  <div class="sort_wrap">VM 환경
+                    <div class="sort_btns">
+                      <button type="button" class="btn_sort asc js_btn_sort">Asc</button>
+                      <button type="button" class="btn_sort desc js_btn_sort on">Desc</button>
+                    </div><!-- //sort_btns -->
+                  </div><!-- //sort_wrap -->
+
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="VM 환경" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_lec_period">관리자 ID
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="관리자 ID" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_temp_name">강의명
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="강의명" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_runtime">생성일시
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="생성일시" style="display: none;">
+                    <img src="/lib/images/ico/table_button_calendar.png" alt="" class="table_button_calendar" style="display: none;">
+                  </div>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">R 과정</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">R 과정</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr class="on">
+                <td>3</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">AI 기초단계</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">AI 중급단계</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">AI 고급단계</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">R 과정</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">R 과정</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">AI 기초단계</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">AI 중급단계</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td class="td_al_left">TEMPLATE 01</td>
+                <td class="td_al_left">VM_ENV01 외 2</td>
+                <td class="td_al_left">admin01</td>
+                <td class="td_al_left">AI 고급단계</td>
+                <td class="td_al_left">2021.03.02  12:00</td>
+              </tr>
+              </tbody>
+            </table>
+
+            <div class="pagenation_wrap">
+              <div class="pagenation_select">
+                <div class="select_wrap">
+                  <select>
+                    <option>10건</option>
+                  </select>
+                </div>
+                <p class="pagenation_counter">총 218건</p>
+              </div>
+              <div class="pagenation_inner">
+                <a href="#" class="pagenation_btn prev"><span>Prev</span></a>
+                <div class="pagenation_current">
+                  <span class="current">10</span>
+                  <span>of 38</span>
+                </div>
+                <a href="#" class="pagenation_btn next"><span>Next</span></a>
+              </div>
+            </div><!-- //pagenation_wrap -->
+
+          </div><!-- //tb_wrap -->
+
+          <div class="list_detail_wrap">
+            <div class="list_detail_tit">
+              <span>TEMPLATE 01</span>의 상세 보기
+            </div>
+
+            <div class="list_detail_choose">
+              <div class="btn_list_wrap">
+                <ul>
+                  <li><button type="button" class="btn_07">수정</button></li>
+                  <li><button type="button" class="btn_08">삭제</button></li>
+                </ul>
+              </div>
+
+              <div class="tb_ctrl list_detail_ctrl">
+                <div class="tb_ctrl_search">
+                  <button type="button" class="btn_border"><span class="ico_ir refresh">Refresh</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="list_detail_contents">
+              <table class="tb_list_detail" style="margin-top: 0;">
+                <colgroup>
+                  <col style="width:14%">
+                  <col style="width:36%">
+                  <col style="width:14%">
+                  <col style="width:36%">
+                </colgroup>
+                <tr>
+                  <th>템플릿명</th>
+                  <td>TEMPLATE 01</td>
+                  <th>관리자 ID</th>
+                  <td>홍길동</td>
+                </tr>
+                <tr>
+                  <th>강의명</th>
+                  <td>AI 기초단계</td>
+                  <th>강의코드</th>
+                  <td>730</td>
+                </tr>
+                <tr>
+                  <th>VM 환경 1</th>
+                  <td>VM_ENV_01</td>
+                  <th>VM 환경 2</th>
+                  <td>VM_ENV_02</td>
+                </tr>
+                <tr>
+                  <th>VM 환경 3</th>
+                  <td>VM_ENV_03</td>
+                  <th>생성일시</th>
+                  <td>2021.03.02  12:00</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div><!-- //container_row -->
+
+
+    </div>
+  </div>
+</div>
+
+<div class="pop_wrap ui-draggable ui-draggable-handle" id="popupLecCreate" style="width:650px;">
+  <button type="button" class="btn_pop_close"><span class="ico_del">Close</span></button>
+  <div class="pop_common">
+    <div class="pop_tit">템플릿 등록</div>
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <img src="/lib/images/gntp/create_temp_img.png" alt="">
+
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">저장</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+<div class="pop_wrap ui-draggable ui-draggable-handle pop_chk pop_temp" id="popupVMCreateChk" style="width:350px;">
+  <div class="pop_common">
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <p class="vmchk_txt">템플릿을 등록하시겠습니까?</p>
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">취소</button>
+        <button type="button" class="btn_action">확인</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+<div class="pop_wrap ui-draggable ui-draggable-handle pop_chk pop_del" id="popupVMCreateChk" style="width:350px;">
+  <div class="pop_common">
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <p class="vmchk_txt">해당 템플릿을 삭제하시겠습니까?</p>
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">취소</button>
+        <button type="button" class="btn_action">확인</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+<div class="pop_wrap ui-draggable ui-draggable-handle" id="popupLecModify" style="width:650px;">
+  <button type="button" class="btn_pop_close"><span class="ico_del">Close</span></button>
+  <div class="pop_common">
+    <div class="pop_tit">템플릿 관리</div>
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <img src="/lib/images/gntp/create_temp_modify.png" alt="">
+
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">저장</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+<div class="pop_wrap ui-draggable ui-draggable-handle pop_chk pop_modify" id="popupLecModifyChk" style="width:350px;">
+  <div class="pop_common">
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <p class="vmchk_txt">템플릿을 수정하시겠습니까?</p>
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">취소</button>
+        <button type="button" class="btn_action">확인</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+
+<script src="/lib/js/jquery.script.js"></script>
+
+<script>
+  $('.table_button').click(function(){
+    $(this).siblings().show();
+    $(this).siblings('.table_button_calendar').hide();
+  });
+
+  $('.table_button_input').click(function (){
+    $(this).siblings().show();
+  });
+
+  $('.table_button_input').dblclick(function(){
+    $(this).hide();
+    $(this).siblings('.table_button_calendar').hide();
+    $(this).siblings('.select_wrap').hide();
+  });
+
+  $('.table_button_calendar').dblclick(function(){
+    $(this).siblings('.table_button_input').hide();
+    $(this).hide();
+    $(this).siblings('.select_wrap').hide();
+  });
+
+  $('.select_status').dblclick(function(){
+    $(this).hide();
+  });
+
+  $('.create_lecture').click(function(){
+    $('#popupLecCreate').show();
+  });
+
+  $('.btn_pop_close').click(function(){
+    $('.pop_wrap').hide();
+  });
+
+  $('#popupLecCreate .btn_action').click(function(){
+    $('#popupVMCreateChk').show();
+  });
+
+  $('.btn_08').click(function (){
+    $('.pop_del').show();
+  })
+
+  $('.btn_07').click(function (){
+    $('#popupLecModify').show();
+  })
+
+  $('#popupLecModify .btn_action').click(function(){
+    $('#popupLecModifyChk').show();
+  });
+
+  $('.pop_chk .btn_action').click(function (){
+    $('.pop_wrap').hide();
+    $('.pop_chk').hide();
+  })
+
+</script>
+</body>
+</html>

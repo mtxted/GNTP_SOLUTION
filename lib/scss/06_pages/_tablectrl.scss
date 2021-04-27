@@ -1,0 +1,356 @@
+/* table ctrl */
+%grid_btm {
+  position: relative;
+  float:right;
+  //height: 42px;
+  //margin-top: -1px;
+  //border-top: 1px solid #3a3d3c;
+  //border-bottom: 1px solid #3a3d3c;
+  //background: #e9eff3;
+}
+
+%grid_left {
+  position: relative;
+  float:left;
+}
+
+
+.pagenation_wrap {
+  width: 100%;
+  height: 42px;
+  margin-top: 1px;
+  padding: 8px 5px;
+  background: #f5f6f9;
+  text-align: center;
+  border-top: 1px solid #c5cad0;
+  border-bottom: 1px solid #858f9c;
+  box-shadow: inset 0 0 0 1px #fff;
+  .pagenation_select {
+    min-width: 75px;
+    display: inline-block;
+    vertical-align: top;
+    @extend %grid_left;
+    .select_wrap {
+      display: inline-block;
+    }
+    .pagenation_counter {
+      height: 24px;
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: top;
+      line-height: 24px;
+      @include font_size(0);
+      color: $fontColorGray;
+    }
+    .select_wrap .selectric-wrapper .selectric .label {
+      height: 22px;
+      line-height: 22px;
+      margin-right: 28px;
+    }
+    .select_wrap .selectric-wrapper .selectric .button {
+      width:28px;
+      height: 22px;
+      line-height: 22px;
+    }
+  }
+  .pagenation_inner {
+    display: inline-block;
+    vertical-align: top;
+    @extend %grid_btm;
+  }
+  .pagenation_btn {
+    position: relative;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 0 1px;
+    border: 1px solid #bec3ca;
+    border-radius: 3px;
+    background: #f9fafb;
+    transition: border-color .2s;
+    box-shadow: inset 0 0 0 1px #fff;
+    &:hover { border-color: $mainColor }
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -5px 0 0 -6px;
+      display: block;
+      width: 12px;
+      height: 10px;
+      overflow: hidden;
+      text-indent: -9999px;
+      white-space: nowrap;
+      background: url(../images/sprite/btn_ico_pagenation.png) no-repeat center top;
+    }
+    &.prev {
+      span { background-position-y: top }
+      //&:hover span { background-position-y: -30px }
+    }
+    &.first {
+      span { background-position-y: -120px }
+      //&:hover span { background-position-y: -150px }
+    }
+    &.next {
+      transform: scaleX(-1);
+      span { background-position-y: top }
+      //&:hover span { background-position-y: -30px }
+    }
+    &.last {
+      transform: scaleX(-1);
+      span { background-position-y: -120px }
+      //&:hover span { background-position-y: -150px }
+    }
+
+
+  }
+  .pagenation_current {
+    float: left;
+    min-width: 75px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    color: #626b7a;
+    font-weight: normal;
+
+    > span { font-weight: bolder }
+    .current { color: $mainColor }
+  }
+}
+
+.tb_ctrl {
+  @include clear;
+  padding: 10px;
+  min-height: 25px;
+  border:1px solid #c5cad0;
+  border-top: 1px solid $mainColorDark;
+  border-width: 1px 1px 0 1px;
+  .tb_ctrl_btns {
+    float: left;
+    .btn_ctrl {
+      float: left;
+      width: 145px;
+      height: $ctrlTopHeight;
+      line-height: $ctrlTopHeight;
+      margin-right: 3px;
+      padding: 0 6px;
+      border: 1px solid #bec3ca;
+    }
+    .msg {
+      float: left;
+      position: relative;
+      height: $ctrlTopHeight;
+      margin-left: 7px;
+      color: #ff5d4d;
+      @include font_size(-1);
+      span {
+        position:absolute;
+        left: 0;
+        bottom: 0;
+        white-space: nowrap;
+      }
+    }
+  }
+  .tb_ctrl_search {
+    float: right;
+    .select_wrap {
+
+      @include select_wrap($ctrlTopHeight - 2px);
+      //@include select_wrap($ctrlTopHeight - 2px, $mainColorDark2, dark);
+      float: left;
+
+      > * { float: left; }
+      input {
+        height: $ctrlTopHeight - 2px;
+        border: 0;
+        display:none;
+      }
+      .btn_search {
+        width: $ctrlTopHeight;
+        height: $ctrlTopHeight - 2px;
+      }
+      .btn_border {
+        margin-left: 0px;
+      }
+      .selectric .button, .selectric .label {
+        height:28px;
+        line-height: 28px;
+      }
+    }
+    .btn_border {
+      float: left;
+      width: $ctrlTopHeight;
+      height: $ctrlTopHeight;
+      margin-left: 3px;
+    }
+
+    .btn_border:nth-of-type(1) {
+      position: relative;
+      &:before {
+        content: '';
+        height: 14px;
+        border-left: 1px solid #e0e2e5;
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        transform: translateY(-50%);
+      }
+      &:after {
+        content: '';
+        height: 14px;
+        border-right: 1px solid #e0e2e5;
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        transform: translateY(-50%);
+      }
+    }
+
+    .btn_border:last-of-type {
+      &:after {
+        content: '';
+        height: 14px;
+        border-right: 0px solid #e0e2e5;
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.sort_wrap {
+  display: inline-block;
+  position: relative;
+  padding: 0 22px 0 0;
+
+  .sort_btns {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 30px;
+    margin-top: -15px
+  }
+
+  .btn_sort {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 15px;
+    height: 14px;
+    border: 0;
+    border-radius: 2px;
+    @include ir_ico('../images/ico/arr_sort_asc.png',false);
+    background-color: #ccd0d7;
+    display: none;
+    transition: top .1s, opacity .1s;
+    opacity: .4;
+    &.on { display: block; opacity: 1 }
+    &.asc {
+      transform: rotateX(180deg);
+    }
+    &:hover { opacity: 1 }
+  }
+
+  &:hover {
+    .btn_sort {
+      display: block;
+      &.asc { top: 0 }
+      &.desc { top: 16px }
+    }
+  }
+}
+
+.ico_status {
+  display: block;
+  padding-left: 17px;
+  text-align: left;
+  background: url(../images/ico/ico_status_normal.png) no-repeat left center;
+  font-weight: 500;
+  &.g1 { background-image: url(../images/ico/ico_status_g1.png); color: #4993ff }
+  &.g2 { background-image: url(../images/ico/ico_status_g2.png); color: #14bd19 }
+  &.g3 { background-image: url(../images/ico/ico_status_g3.png); color: #ee5a4c }
+  &.g4 { background-image: url(../images/ico/ico_status_g4.png); color: #cc00ff }
+  &.g5 { background-image: url(../images/ico/ico_status_g5.png); color: #ff7e00 }
+  &.g6 { background-image: url(../images/ico/ico_status_g6.png); color: #000 }
+
+  &.g11 { background-image: url(../images/ico/ico_status_g11.png); color: #4993ff }
+  &.g12 { background-image: url(../images/ico/ico_status_g12.png); color: #4993ff }
+  &.g13 { background-image: url(../images/ico/ico_status_g13.png); color: #ff7e00 }
+  &.g14 { background-image: url(../images/ico/ico_status_g14.png); color: #cc00ff }
+  &.g15 { background-image: url(../images/ico/ico_status_g15.png);}
+}
+.txt_time {
+  display: inline-block;
+  padding-left: 10px;
+  color: #979797
+}
+
+.btn_more {
+  @include btn_radius(32px, true);
+  @include btn_sprite('more',18px);
+  border: 0;
+  background: transparent;
+  &:hover { background: #fff }
+}
+
+.stage_list {
+  @include clear;
+  display: inline-block;
+  position: relative;
+  &::before {
+    content: '';
+    @include position_ml;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #d6dce1
+  }
+  > li  {
+    position: relative;
+    float: left;
+    &:first-child ~ li {
+      margin-left: 8px;
+    }
+    > .ico_ir {
+      @include btn_radius(28px,true);
+      background-color: #fff;
+      border: 2px solid;
+      &.status1 { border-color: #6268ff }
+      &.status2 { border-color: #cfd2d5; border-image: url(../images/ico/border_status_bg.png);
+        border-image-repeat: round; border-radius: 100%; border-image-width: 28px; border-image-slice: 14;}
+      &.status3 { border-color: #4993ff }
+      &.status4 { border-color: #ff5d4d }
+      &.status5 { border-color: #878787 }
+    }
+  }
+  .popmsg_wrap .popmsg_box {
+    @include bubble(6px,#061839,top);
+    min-width: 100px;
+    padding: 10px;
+    text-align: center;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    @include font_size(-2);
+    line-height: 1.3em
+  }
+}
+
+.required {
+  position: relative;
+  padding-right: 10px;
+  &::after {
+    content: '*';
+    @include ir;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    margin-top: -5px;
+    color: #f45343;
+    font: 12px 'Dotum', sans-serif;
+    background: url(../images/ico/ico_required.png) no-repeat left top
+  }
+}

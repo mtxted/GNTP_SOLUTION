@@ -1,0 +1,155 @@
+/* navbar */
+
+.sidebar_nav {
+  border-top: 1px solid #061839;
+  li {
+    position: relative;
+    > a {
+      position: relative;
+      display: block;
+      padding: 18px 15px 17px 42px;
+      border-bottom: 1px solid #061839;
+      color: #afbacb;
+      text-transform: uppercase;
+      text-decoration: none;
+      @include font_size(0);
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 25px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin-top: -4px;
+        background: #485770;
+        transition: background-color .2s;
+      }/* bullet */
+    }
+    &.on {
+      &:not(.hasChild) {
+        background: $mainColor;
+        &::after { border-color: $navPointColor; }
+      }
+      > a { color: #fff; }
+    }
+
+
+
+
+    &:not(.hasChild) {
+      &::after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 1px;
+        border-left: 3px solid transparent;
+        transition: border-color .2s;
+      }
+    }
+
+    > a:hover::after, &.on > a::after,
+    > a:hover::before, &.on > a::before {
+      background-color: #fff;
+    }
+
+
+
+    &.hasChild > a::after {
+      width: 8px;
+      height: 2px;
+      border-radius: 0;
+      margin-top: -2px;
+    }
+    &.hasChild:not(.open) > a::before {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      width: 8px;
+      height: 2px;
+      margin-top: -2px;
+      background: #485770;
+      transition: background-color .2s;
+      transform: rotate(90deg);
+    }
+    &.hasChild:not(.open) > a:hover::before,
+    &.hasChild.on > a::before { background-color: $navPointColor; }
+
+
+
+    &.hasChild.open > ul { display: block }
+  }
+
+  ul {
+    position: relative;
+    margin-top: -1px;
+    border-top: 1px solid #00082a;
+    background: #011b41;
+    display: none;
+
+    > li {
+      > a {
+        padding: 11px 15px 10px 60px;
+        border-bottom-color: #001032;
+        color: #8491a6;
+        &::after { left: 43px; }
+      }
+    }
+    > li.hasChild:not(.open) > a::before { left: 43px; }
+    li:not(.hasChild) > a::after {
+      width: 4px;
+      height: 4px;
+      margin-top: -2px;
+    }
+
+    ul { background: #001038;
+      li {
+        a {
+          font-size: 1rem;
+          text-transform: none;
+        }
+      }
+
+      > li {
+        > a {
+          padding: 14px 15px 12px 75px;
+          border-bottom-color: #00082a;
+          color: #62728b;
+          &::after {
+            left: 61px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.group {
+  li {
+    &.on {
+      &:not(.hasChild) {
+        background: $mainColor;
+        &::after { border-color: $txtPointColor; }
+      }
+      > a { color: $txtPointColor; }
+    }
+    > a:hover::after, &.on > a::after,
+    > a:hover::before, &.on > a::before {
+      background-color: $txtPointColor;
+    }
+
+    &.hasChild:not(.open) > a:hover::before,
+    &.hasChild.dev_on > a::before { background-color: $txtPointColor; }
+  }
+}
+
+
+
+
+
+
+
+

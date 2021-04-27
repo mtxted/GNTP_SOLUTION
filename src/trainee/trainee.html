@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/javascript">
+  <meta http-equiv="Content-Type" content="text/css">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/lib/css/selectric.css">
+  <link rel="stylesheet" type="text/css" href="/lib/css/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/lib/scss/main.css">
+
+  <script src="/lib/js/jquery-1.9.1.min.js"></script>
+  <script src="/lib/js/jquery-ui.min.js"></script>
+  <script src="/lib/js/jquery.selectric.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="sidebar">
+    <h1 class="sidebar_logo"><img src="/lib/images/sidebar/sidebar_logo.png" alt="GNTP"></h1>
+    <div class="sidebar_cont">
+      <div class="sidebar_user js_dropdown">
+        <div class="sidebar_user_profile"><!--<img src="#" alt="">--></div>
+        <button type="button" class="sidebar_user_btn js_dropdown_btn">Gil Dong, Hong</button>
+        <div class="sidebar_user_menu js_dropdown_list">
+          <ul>
+            <li><a href="#">포탈 바로가기</a></li>
+            <li><a href="/src/push.html">알림 보기</a></li>
+          </ul>
+          <button type="button">Logout</button>
+        </div><!-- //sidebar_user_menu -->
+      </div>
+    </div>
+
+    <nav>
+      <ul class="sidebar_nav js_nav">
+        <li><a href="/src/reservation/vm_reservation.html">가상 실습실 예약 관리</a></li>
+        <li><a href="/src/environment/vm_environment.html">가상 환경 관리</a></li>
+        <li><a href="/src/lecture/lecture.html">강의 관리</a></li>
+        <li><a href="/src/template/template.html">템플릿 관리</a></li>
+        <li class="on"><a href="/src/trainee/trainee.html">실습자 관리</a></li>
+        <li><a href="/src/contest/contest.html">공모전 관리</a></li>
+        <li><a href="/src/board/board.html">게시판 관리</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="top_toast">
+      <div class="top_toast_item" style="display:none">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="top_toast_item" style="display:none">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.<br>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="top_toast_item" style="display:block">
+        <div class="top_toast_inner">
+          <p>경고 및 알림이 들어갑니다. 경고 및 알림이 들어갑니다.</p>
+        </div>
+        <button type="button" class="top_toast_close"><span class="ico_close">Close</span></button>
+      </div><!-- //top_toast_item -->
+
+      <div class="count">8</div>
+    </div>
+    <div class="top_option">
+
+    </div><!-- //top_option -->
+
+    <div class="container">
+      <div class="container_row">
+        <div class="top_title">
+          <h2 class="current">실습자 관리</h2>
+        </div>
+      </div><!-- //container_row -->
+
+      <div class="container_row">
+        <div class="top_tab js_tab">
+          <a href="trainee.html" class="on"><span>실습자 권한 관리</span></a>
+          <a href="trainee_detail.html"><span>실습자 상세 이용 현황</span></a>
+        </div>
+      </div><!-- //container_row -->
+
+      <div class="container_row">
+        <div class="content">
+          <div class="tb_ctrl">
+            <div class="tb_ctrl_btns">
+
+            </div>
+            <div class="tb_ctrl_search">
+              <div class="select_wrap">
+                <input type="search">
+                <button type="submit" class="btn_search"><span class="ico_ir search">Search</span></button>
+              </div>
+              <button type="button" class="btn_border"><span class="ico_ir refresh">Refresh</span></button>
+            </div>
+          </div>
+          <div class="tb_wrap">
+            <table class="tb_grid">
+              <thead>
+              <tr>
+                <th class="th_check">No</th>
+                <th class="th_step">ID
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="ID" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_vm_id">
+                  <div class="sort_wrap">이름
+                    <div class="sort_btns">
+                      <button type="button" class="btn_sort asc js_btn_sort">Asc</button>
+                      <button type="button" class="btn_sort desc js_btn_sort on">Desc</button>
+                    </div><!-- //sort_btns -->
+                  </div><!-- //sort_wrap -->
+
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="이름" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_status">학교/소속
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="학교/소속" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_vm_port">학과/부서
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="학과/부서" style="display: none;">
+                  </div>
+                </th>
+                <th class="">이메일
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="이메일" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_status">생년월일
+                  <div class="table_button_wrap">
+                    <button type="button" class="table_button">Button</button>
+                    <input type="text" class="table_button_input" placeholder="생년월일" style="display: none;">
+                    <img src="/lib/images/ico/table_button_calendar.png" alt="" class="table_button_calendar" style="display: none;">
+                  </div>
+                </th>
+                <th class="th_status">권한
+                  <div class="table_button_wrap select">
+                    <button type="button" class="table_button">Button</button>
+                    <div class="select_wrap select_status" aria-disabled="true" style="display: none;">
+                      <select>
+                        <option value="">전체</option>
+                        <option value="">학생</option>
+                        <option value="">연구원</option>
+                        <option value="">관리자</option>
+                      </select>
+                    </div>
+                  </div>
+                </th>
+                <th class="th_status">상태
+                  <div class="table_button_wrap select">
+                    <button type="button" class="table_button">Button</button>
+                    <div class="select_wrap select_status" aria-disabled="true" style="display: none;">
+                      <select>
+                        <option value="">전체</option>
+                        <option value="">실습중</option>
+                        <option value="">승인대기</option>
+                        <option value="">승인거부</option>
+                        <option value="">실습정지</option>
+                        <option value="">탈퇴</option>
+                      </select>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">서울대학교</td>
+                <td class="td_al_left">컴퓨터공학</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">학생</td>
+                <td><span class="ico_status g2">승인대기</span></td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">서울대학교</td>
+                <td class="td_al_left">컴퓨터공학</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">학생</td>
+                <td><span class="ico_status g1">실습중</span></td>
+              </tr>
+
+              <tr class="on">
+                <td>3</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">경남TP</td>
+                <td class="td_al_left">컴퓨터공학</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">관리자</td>
+                <td><span class="ico_status g5">실습정지</span></td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">경남TP</td>
+                <td class="td_al_left">컴퓨터공학</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">연구원</td>
+                <td><span class="ico_status">탈퇴</span></td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">경남TP</td>
+                <td class="td_al_left">컴퓨터공학</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">학생</td>
+                <td><span class="ico_status g3">승인거부</span></td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">서울대학교</td>
+                <td class="td_al_left">컴퓨터공학</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">학생</td>
+                <td><span class="ico_status g2">승인대기</span></td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">서울대학교</td>
+                <td class="td_al_left">데이터솔루션</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">학생</td>
+                <td><span class="ico_status g1">실습중</span></td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">경남TP</td>
+                <td class="td_al_left">데이터솔루션</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">관리자</td>
+                <td><span class="ico_status g5">실습정지</span></td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">경남TP</td>
+                <td class="td_al_left">데이터솔루션</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">연구원</td>
+                <td><span class="ico_status">탈퇴</span></td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td class="td_al_left">USER 01</td>
+                <td class="td_al_left">홍길동</td>
+                <td class="td_al_left">경남TP</td>
+                <td class="td_al_left">데이터솔루션</td>
+                <td class="td_al_left">hong@gmail.com</td>
+                <td class="td_al_left">19980101</td>
+                <td class="td_al_left">학생</td>
+                <td><span class="ico_status g3">승인거부</span></td>
+              </tr>
+
+
+              </tbody>
+            </table>
+
+            <div class="pagenation_wrap">
+              <div class="pagenation_select">
+                <div class="select_wrap">
+                  <select>
+                    <option>10건</option>
+                  </select>
+                </div>
+                <p class="pagenation_counter">총 218건</p>
+              </div>
+              <div class="pagenation_inner">
+                <a href="#" class="pagenation_btn prev"><span>Prev</span></a>
+                <div class="pagenation_current">
+                  <span class="current">10</span>
+                  <span>of 38</span>
+                </div>
+                <a href="#" class="pagenation_btn next"><span>Next</span></a>
+              </div>
+            </div><!-- //pagenation_wrap -->
+
+          </div><!-- //tb_wrap -->
+
+          <div class="list_detail_wrap">
+            <div class="list_detail_tit">
+              <span>USER 01</span>의 상세 보기
+            </div>
+
+            <div class="list_detail_choose">
+              <div class="select_wrap list_detail_select clearfix" aria-disabled="true">
+                <select>
+                  <option value="" class="select_action">액션</option>
+                  <option value="" class="select_action">승인대기</option>
+                  <option value="" class="select_action">실습중</option>
+                  <option value="" class="select_action">실습정지</option>
+                  <option value="" class="select_action">탈퇴</option>
+                  <option value="" class="select_action">승인거부</option>
+                </select>
+              </div>
+
+              <div class="tb_ctrl list_detail_ctrl">
+                <div class="tb_ctrl_search">
+                  <button type="button" class="btn_border"><span class="ico_ir refresh">Refresh</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="list_detail_contents">
+              <div class="list_detail_status g5"><p>실습정지</p></div>
+              <table class="tb_list_detail">
+                <colgroup>
+                  <col style="width:14%">
+                  <col style="width:36%">
+                  <col style="width:14%">
+                  <col style="width:36%">
+                </colgroup>
+                <tr>
+                  <th>ID</th>
+                  <td>USER 01</td>
+                  <th>이름</th>
+                  <td>홍길동</td>
+                </tr>
+                <tr>
+                  <th>권한</th>
+                  <td>학생</td>
+                  <th>할당 받은 VM</th>
+                  <td>1개</td>
+                </tr>
+                <tr>
+                  <th>학교</th>
+                  <td>부산대학교</td>
+                  <th>학과</th>
+                  <td>컴퓨터공학</td>
+                </tr>
+                <tr>
+                  <th>이메일</th>
+                  <td>hong@gmail.com</td>
+                  <th>생년월일</th>
+                  <td>19980101</td>
+                </tr>
+                <tr>
+                  <th>연락처</th>
+                  <td colspan="3">010-1234-5678</td>
+                </tr>
+                <tr>
+                  <th>사유</th>
+                  <td colspan="3">
+                    기타사유
+                    <span>기타 사유의 경우 여기에 기타사유의 사유가 기입됩니다. 기타사유의 사유가 기입됩니다. 기타사유의 사유가 기입됩니다.</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div><!-- //container_row -->
+    </div>
+  </div>
+</div>
+
+<div class="pop_wrap ui-draggable ui-draggable-handle" id="popupLecCreate" style="width:570px;">
+  <button type="button" class="btn_pop_close"><span class="ico_del">Close</span></button>
+  <div class="pop_common">
+    <div class="pop_tit">사유 입력</div>
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <img src="/lib/images/gntp/action_trainee_img.png" alt="">
+
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">저장</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+<div class="pop_wrap ui-draggable ui-draggable-handle pop_chk pop_temp" id="popupVMCreateChk" style="width:350px;">
+  <div class="pop_common">
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <p class="vmchk_txt">실습자 상태를 변경하시겠습니까?</p>
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">취소</button>
+        <button type="button" class="btn_action">확인</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
+<script src="/lib/js/jquery.script.js"></script>
+
+<script>
+  $('.table_button').click(function(){
+    $(this).siblings().show();
+    $(this).siblings('.table_button_calendar').hide();
+  });
+
+  $('.table_button_input').click(function (){
+    $(this).siblings().show();
+  });
+
+  $('.table_button_input').dblclick(function(){
+    $(this).hide();
+    $(this).siblings('.table_button_calendar').hide();
+    $(this).siblings('.select_wrap').hide();
+  });
+
+  $('.table_button_calendar').dblclick(function(){
+    $(this).siblings('.table_button_input').hide();
+    $(this).hide();
+    $(this).siblings('.select_wrap').hide();
+  });
+
+  $('.select_status').dblclick(function(){
+    $(this).hide();
+  });
+
+  $('.list_detail_wrap .list_detail_contents .list_detail_status').click(function(){
+    $('#popupLecCreate').show();
+  });
+
+  $('.btn_pop_close').click(function(){
+    $('.pop_wrap').hide();
+  });
+
+  $('#popupLecCreate .btn_action').click(function(){
+    $('#popupVMCreateChk').show();
+  });
+
+  $('.btn_08').click(function (){
+    $('.pop_del').show();
+  })
+
+  $('.btn_07').click(function (){
+    $('#popupLecModify').show();
+  })
+
+  $('#popupLecModify .btn_action').click(function(){
+    $('#popupLecModifyChk').show();
+  });
+
+  $('.pop_chk .btn_action').click(function (){
+    $('.pop_wrap').hide();
+    $('.pop_chk').hide();
+  })
+
+</script>
+</body>
+</html>

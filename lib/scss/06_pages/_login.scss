@@ -1,0 +1,141 @@
+/* login */
+html {
+  font-size: $rootSize;
+}
+body {
+  height: 100%;
+  min-width: 1600px;
+  font-family: 'Noto', sans-serif;
+  font-size: 1rem
+}
+
+.wrap {
+  position: relative;
+  min-height: 100%;
+  padding-left: 40%
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  padding: 168px 55px 0 0;
+  background: url(../images/login/login_bg.jpg) no-repeat right top / cover;
+  text-align: right
+}
+.copyright {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: -30px;
+  margin-left: -515px;
+  text-align: right;
+  color: rgba(255,255,255,0.8);
+  @include font_size(1);
+  font-weight: bold
+}
+
+.login_wrap {
+  width: 500px;
+  padding: 165px 0 50px 60px;
+  background-color: #fff;
+
+  .login_tit_img {
+    margin-left: -3px;
+    margin-top: 5px
+  }
+  .login_tit_txt {
+    margin-top: 10px;
+    color: #93a0ae;
+    font-weight: bold;
+    @include font_size(3);
+  }
+  section {
+    position: relative;
+    margin: 25px 0;
+    padding-top: 25px;
+    border-top: 1px solid #dbdde1;
+  }
+}
+
+.login_form {
+  padding-bottom: 25px;
+  color: #3b3e45;
+
+  input::-webkit-input-placeholder { color: #8f99aa; opacity: 1 }
+  input:-ms-input-placeholder { color: #8f99aa; opacity: 1 }
+  input[type=text],
+  input[type=password],
+  input[type=number]{
+    width: 100%;
+    height: 54px;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    border: 1px solid #c1c7d4;
+    background: #f6faff;
+    color: #555f70;
+    @include font_size(1)
+  }
+}
+
+.btn_login {
+  width: 100%;
+  height: 64px;
+  border: 0;
+  border-radius: 4px;
+  margin-top: 10px;
+  color: #fff;
+  background: $mainColorD2;
+  @include font_size(5)
+}
+.login_btm {
+  padding-top: 25px;
+  border-top: 1px dotted #555f70;
+  .btn_login {
+    margin: 0;
+    background: #4299fb
+  }
+}
+
+.membership_menu {
+  display: table;
+  width: 100%;
+  height: 34px;
+  table-layout: fixed;
+  margin-top: 4px;
+  border-spacing: 0;
+  border: 1px solid #e6e8ec;
+  border-radius: 4px;
+  background: #f1f4f8;
+  a {
+    position: relative;
+    display: table-cell;
+    height: 100%;
+    color: #555f70;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    &:first-child ~ a::after {
+      content: ' ';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 10px;
+      border-left: 1px solid #dbdee4
+    }
+  }
+}
+
+.login_err {
+  width: 100%;
+  height: 44px;
+  line-height: 42px;
+  margin-top: 30px;
+  border : 1px solid #ff5400;
+  border-radius: 4px;
+  color: #ef0000;
+  text-align: center
+}
