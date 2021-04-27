@@ -41,7 +41,7 @@
     }
 
     .button {
-      background-image: url(/lib/images/ico/arr_down_gray.png) !important
+      background-image: url(../../lib/images/ico/arr_down_gray.png) !important
     }
   }
 
@@ -58,7 +58,7 @@
       }
       .button {
         width: 40px;
-        background: transparent url(/lib/images/ico/arr_down_dark.png) no-repeat center center;
+        background: transparent url(../../lib/images/ico/arr_down_dark.png) no-repeat center center;
         &::after {
           display: none
         }
@@ -100,7 +100,7 @@
     }
 
     .selectric .button {
-      background-image: url(/lib/images/ico/arr_down_gray.png)
+      background-image: url(../../lib/images/ico/arr_down_gray.png)
     }
   }
 
@@ -112,7 +112,7 @@
     }
 
     .selectric .button {
-      background-image: url(/lib/images/ico/arr_down_gray.png)
+      background-image: url(../../lib/images/ico/arr_down_gray.png)
     }
   }
 
@@ -131,7 +131,7 @@
     //border-color: $mainColorD2;
 
     .selectric .button {
-      //background-image: url(/lib/images/ico/arr_down_blue.png)
+      //background-image: url(../../lib/images/ico/arr_down_blue.png)
     }
 
     .selectric .label {

@@ -90,11 +90,11 @@
         width: 10px;
         height: 9px;
         border: 0;
-        background: url(/lib/images/ico/table_button.png) no-repeat;
+        background: url(../../lib/images/ico/table_button.png) no-repeat;
         text-indent: -9999em;
         cursor: pointer;
-        &.on { background: url(/lib/images/ico/table_button_on.png) no-repeat; }
-        &:hover { background: url(/lib/images/ico/table_button_on.png) no-repeat; }
+        &.on { background: url(../../lib/images/ico/table_button_on.png) no-repeat; }
+        &:hover { background: url(../../lib/images/ico/table_button_on.png) no-repeat; }
       }
 
       .table_button_input {
