@@ -379,6 +379,20 @@
   </div><!-- popup -->
 </div><!-- popup -->
 
+<div class="pop_wrap ui-draggable ui-draggable-handle pop_accept" id="popupAccept" style="width:350px;">
+  <div class="pop_common">
+    <div class="pop_body">
+      <div class="pop_cont pop_cont_scroll">
+        <p class="vmchk_txt">접수하시겠습니까?</p>
+      </div><!-- pop_cont -->
+      <div class="pop_btns">
+        <button type="button" class="btn_action">취소</button>
+        <button type="button" class="btn_action">확인</button>
+      </div>
+    </div><!-- pop_body -->
+  </div><!-- popup -->
+</div><!-- popup -->
+
 <script src="../../lib/js/jquery.script.js"></script>
 
 <script>
@@ -427,6 +441,10 @@
     $('.pop_wrap').hide();
     $('.pop_chk').hide();
   })
+
+  $('.create_vm').click(function(){
+    $('#popupAccept').show();
+  });
 
 </script>
 </body>
