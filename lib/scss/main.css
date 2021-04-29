@@ -6368,13 +6368,11 @@ body:before {
 
 .vm_dashboard {
   position: relative;
-  overflow: hidden;
 }
 .vm_dashboard > div {
   margin-right: 10px;
   border: 1px solid #c5cad0;
   border-top: 1px solid #071e3f;
-  overflow: hidden;
   float: left;
 }
 .vm_dashboard > div .tit {
