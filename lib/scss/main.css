@@ -419,10 +419,20 @@ button {
 .select_wrap.lec_time_01 {
   position: absolute;
   left: -180px;
+  border: 1px solid #071e3f;
+}
+.select_wrap.lec_time_01 .selectric .label, .select_wrap.lec_time_01 .selectric .button {
+  height: 32px;
+  line-height: 32px;
 }
 .select_wrap.lec_time_02 {
   position: absolute;
   left: -80px;
+  border: 1px solid #071e3f;
+}
+.select_wrap.lec_time_02 .selectric .label, .select_wrap.lec_time_02 .selectric .button {
+  height: 32px;
+  line-height: 32px;
 }
 .select_wrap.disabled {
   border-color: #e0e6ea !important;
