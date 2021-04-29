@@ -22,7 +22,7 @@
 <body>
 <div class="wrap">
   <div class="sidebar">
-    <h1 class="sidebar_logo"><img src="../../lib/images/sidebar/sidebar_logo.png" alt="GNTP"></h1>
+    <h1 class="sidebar_logo"><a href="../../index.html"><img src="../../lib/images/sidebar/sidebar_logo.png" alt="GNTP"></a></h1>
     <div class="sidebar_cont">
       <div class="sidebar_user js_dropdown">
         <div class="sidebar_user_profile"><!--<img src="#" alt="">--></div>
@@ -165,13 +165,11 @@
                   </div>
                 </th>
                 <th class="th_vm_port">강의차수
-                  <div class="table_button_wrap select">
+                  <div class="table_button_wrap">
                     <button type="button" class="table_button">Button</button>
-                    <input type="text" class="table_button_input" placeholder="VM 실행 시작 일시" style="display: none;">
-                    <img src="../../lib/images/ico/table_button_calendar.png" alt="" class="table_button_calendar" style="display: none;">
-                    <div class="select_wrap" aria-disabled="true" style="display: none;">
+                    <div class="select_wrap lec_time_01 select_status" aria-disabled="true" style="display: none; left: -87px !important;">
                       <select>
-                        <option>차수</option>
+                        <option>강의차수</option>
                         <option>1차</option>
                         <option>2차</option>
                         <option>3차</option>
@@ -183,19 +181,17 @@
                   </div>
                 </th>
                 <th class="th_vm_port">개설인원
-                  <div class="table_button_wrap select">
+                  <div class="table_button_wrap">
                     <button type="button" class="table_button">Button</button>
-                    <input type="text" class="table_button_input" placeholder="VM 실행 종료 일시" style="display: none;">
-                    <img src="../../lib/images/ico/table_button_calendar.png" alt="" class="table_button_calendar" style="display: none;">
-                    <div class="select_wrap" aria-disabled="true" style="display: none;">
+                    <div class="select_wrap lec_time_01 select_status" aria-disabled="true" style="display: none; left: -50px !important;">
                       <select>
-                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
                         <option>6</option>
+                        <option>40</option>
                       </select>
                     </div>
                   </div>
@@ -369,8 +365,14 @@
             <div class="list_detail_choose">
               <div class="btn_list_wrap">
                 <ul>
-                  <li><button type="button" class="btn_07">수정</button></li>
-                  <li><button type="button" class="btn_08">삭제</button></li>
+                  <li>
+                    <button type="button" class="btn_07">수정</button>
+                    <img src="../../lib/images/gntp/caption_07.png" alt="">
+                  </li>
+                  <li>
+                    <button type="button" class="btn_08">삭제</button>
+                    <img src="../../lib/images/gntp/caption_06.png" alt="">
+                  </li>
                 </ul>
               </div>
 
@@ -555,8 +557,15 @@
   $('.pop_chk .btn_action').click(function (){
     $('.pop_wrap').hide();
     $('.pop_chk').hide();
-  })
+  });
 
+  $('.list_detail_wrap .list_detail_choose .btn_list_wrap ul li').mouseenter(function (){
+    $(this).children('img').show();
+  });
+
+  $('.list_detail_wrap .list_detail_choose .btn_list_wrap ul li').mouseleave(function (){
+    $(this).children('img').hide();
+  });
 </script>
 </body>
 </html>

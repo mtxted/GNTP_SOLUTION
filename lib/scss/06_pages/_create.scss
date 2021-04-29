@@ -863,11 +863,15 @@
       margin-left: 2px;
       float: left;
       ul {
-        overflow: hidden;
         li {
           float: left;
-
-
+          position: relative;
+          img {
+            display: none;
+            position: absolute;
+            top: -30px;
+            left: 0px;
+          }
           button {
             width: 30px;
             height: 28px;

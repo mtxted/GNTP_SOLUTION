@@ -22,7 +22,7 @@
 <body>
 <div class="wrap">
   <div class="sidebar">
-    <h1 class="sidebar_logo"><img src="../../lib/images/sidebar/sidebar_logo.png" alt="GNTP"></h1>
+    <h1 class="sidebar_logo"><a href="../../index.html"><img src="../../lib/images/sidebar/sidebar_logo.png" alt="GNTP"></a></h1>
     <div class="sidebar_cont">
       <div class="sidebar_user js_dropdown">
         <div class="sidebar_user_profile"><!--<img src="#" alt="">--></div>
@@ -425,12 +425,30 @@
 
               <div class="btn_list_wrap">
                 <ul>
-                  <li><button type="button" class="btn_01">실행</button></li>
-                  <li><button type="button" class="btn_02"></button></li>
-                  <li><button type="button" class="btn_03"></button></li>
-                  <li><button type="button" class="btn_04"></button></li>
-                  <li><button type="button" class="btn_05"></button></li>
-                  <li><button type="button" class="btn_06"></button></li>
+                  <li>
+                    <button type="button" class="btn_01">실행</button>
+                    <img src="../../lib/images/gntp/caption_01.png" alt="">
+                  </li>
+                  <li>
+                    <button type="button" class="btn_02"></button>
+                    <img src="../../lib/images/gntp/caption_02.png" alt="">
+                  </li>
+                  <li>
+                    <button type="button" class="btn_03"></button>
+                    <img src="../../lib/images/gntp/caption_03.png" alt="">
+                  </li>
+                  <li>
+                    <button type="button" class="btn_04"></button>
+                    <img src="../../lib/images/gntp/caption_04.png" alt="">
+                  </li>
+                  <li>
+                    <button type="button" class="btn_05"></button>
+                    <img src="../../lib/images/gntp/caption_05.png" alt="">
+                  </li>
+                  <li>
+                    <button type="button" class="btn_06"></button>
+                    <img src="../../lib/images/gntp/caption_06.png" alt="">
+                  </li>
                 </ul>
               </div>
 
@@ -575,7 +593,15 @@
   $('.pop_chk .btn_action').click(function (){
     $('.pop_wrap').hide();
     $('.pop_chk').hide();
-  })
+  });
+
+  $('.list_detail_wrap .list_detail_choose .btn_list_wrap ul li').mouseenter(function (){
+    $(this).children('img').show();
+  });
+
+  $('.list_detail_wrap .list_detail_choose .btn_list_wrap ul li').mouseleave(function (){
+    $(this).children('img').hide();
+  });
 
 </script>
 </body>

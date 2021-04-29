@@ -1825,7 +1825,7 @@ body:before {
 }
 .pop_wrap .pop_common .pop_body .pop_btns {
   position: relative;
-  height: 52px;
+  height: 56px;
   padding: 10px 10px 0;
   border-top: 1px solid #dfe6e8;
   background: #f0f4f6;
@@ -3066,10 +3066,11 @@ body:before {
   float: left;
   width: 145px;
   height: 30px;
-  line-height: 30px;
+  line-height: 29px;
   margin-right: 3px;
-  padding: 0 6px;
+  padding: 0 6px 0 12px;
   border: 1px solid #bec3ca;
+  font-size: 0.923rem;
 }
 .tb_ctrl .tb_ctrl_btns .msg {
   float: left;
@@ -6168,11 +6169,15 @@ body:before {
   margin-left: 2px;
   float: left;
 }
-.list_detail_wrap .list_detail_choose .btn_list_wrap ul {
-  overflow: hidden;
-}
 .list_detail_wrap .list_detail_choose .btn_list_wrap ul li {
   float: left;
+  position: relative;
+}
+.list_detail_wrap .list_detail_choose .btn_list_wrap ul li img {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 0px;
 }
 .list_detail_wrap .list_detail_choose .btn_list_wrap ul li button {
   width: 30px;
