@@ -515,6 +515,8 @@
     $('#popupViewModify').show();
   }) ;
 
+
+
   $('#popupViewModify .btn_modify').click(function () {
     $('#popupViewModify').hide();
     $('#popupWriteModify').show();
@@ -527,6 +529,10 @@
   $('.btn_delete').click(function () {
     $('.pop_delete').show();
   })
+
+  $("#popupViewModify .btn_action").click(function () {
+    $('#popupViewModify').hide();
+  });
 </script>
 </body>
 </html>
