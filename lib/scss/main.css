@@ -1032,33 +1032,33 @@ body:before {
 .top_option .select_wrap > .selectric-wrapper {
   min-width: 230px;
 }
-.top_option ul {
+.top_option > ul {
   overflow: hidden;
   position: relative;
 }
-.top_option ul li {
+.top_option > ul li {
   float: left;
   font-size: 13px;
   color: #677183;
   line-height: 30px;
 }
-.top_option ul li span {
+.top_option > ul li span {
   margin: 0 5px;
   display: inline-block;
   font-size: 22px;
   position: relative;
   top: 2.5px;
 }
-.top_option ul li span.vm_01 {
+.top_option > ul li span.vm_01 {
   color: #0082ff;
 }
-.top_option ul li span.vm_02 {
+.top_option > ul li span.vm_02 {
   color: #000;
 }
-.top_option ul li:first-of-type {
+.top_option > ul li:first-of-type {
   margin-right: 50px;
 }
-.top_option ul li:first-of-type::after {
+.top_option > ul li:first-of-type::after {
   content: "";
   width: 1px;
   height: 10px;
@@ -1067,7 +1067,7 @@ body:before {
   top: 12.5px;
   right: 100px;
 }
-.top_option ul li:last-of-type::after {
+.top_option > ul li:last-of-type::after {
   content: none;
 }
 
